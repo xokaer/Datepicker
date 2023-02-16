@@ -1,0 +1,79 @@
+<!--Add New Form-->
+<form (ngSubmit)="onSubmit()" #surveyForm="ngForm">
+  <!--Form Name-->
+  <div class="form-group row">
+    <label for="formName" class="col-sm-2 col-form-label">Form Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control form-control-sm" id="formName" placeholder="Form Name" required
+             [(ngModel)]="model.formName" name="formName">
+    </div>
+  </div>
+
+  <!--Description English-->
+  <div class="form-group row">
+    <label for="descriptionEnglish" class="col-sm-2 col-form-label">Description(Eng):</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control form-control-sm" id="descriptionEnglish" placeholder="Description" required
+             [(ngModel)]="model.descriptionEnglish" name="descriptionEnglish">
+    </div>
+  </div>
+
+  <!--Description Local-->
+  <div class="form-group row">
+    <label for="descriptionLocal" class="col-sm-2 col-form-label">Description(Local):</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control form-control-sm" id="descriptionLocal" placeholder="Description" required
+             [(ngModel)]="model.descriptionLocal" name="descriptionLocal">
+    </div>
+  </div>
+
+  <!--Stylesheet class-->
+  <div class="form-group row">
+    <label for="styleSheetClass" class="col-sm-2 col-form-label">Stylesheet Class:</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control form-control-sm" id="styleSheetClass" placeholder="Stylesheet Class"
+             [(ngModel)]="model.styleSheetClass" name="styleSheetClass">
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <div class="col-sm-2 col-form-label"></div>
+
+    <!--Published-->
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="published" [(ngModel)]="model.isPublished" name="isPublished">
+      <label class="form-check-label" for="published">Published</label>
+    </div>
+
+    <!--Show English-->
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="showEnglish" [(ngModel)]="model.showEnglish"
+             name="showEnglish">
+      <label class="form-check-label" for="showEnglish">Show English</label>
+    </div>
+
+    <!--Show Local-->
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="showLocal" [(ngModel)]="model.showLocal" name="showLocal">
+      <label class="form-check-label" for="showLocal">Show Local</label>
+    </div>
+
+    <!--Show Both-->
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="showBoth" [(ngModel)]="model.showBoth" name="showBoth">
+      <label class="form-check-label" for="showBoth">Show Both</label>
+    </div>
+
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-2 col-form-label"></div>
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-primary" [disabled]="!surveyForm.form.valid">Save</button>
+    </div>
+    <div class="col-md-2">
+      <button type="button" class="btn btn-secondary">Clear</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,50 @@
+<!--Content-->
+<div class="container">
+
+  <div class="row">
+    <!--Add New-->
+    <button type="button" class="btn btn-primary" *ngIf="showAddNew" (click)="onAddNewClick()">New</button>
+
+    <!--Cancel Add New-->
+    <button type="button" class="btn btn-secondary" *ngIf="!showAddNew && !showSurveyEditor" (click)="onCancelAddNewClick()">Cancel</button>
+
+    <!--Cancel Survey Form-->
+    <button type="button" class="btn btn-primary" *ngIf="showSurveyEditor" (click)="onSurveyPreviewCancelClick()">Cancel</button>
+  </div>
+
+  <hr>
+
+  <!--Add New Form-->
+  <app-survey-form *ngIf="showAddNewForm"></app-survey-form>
+
+
+  <!--Form List Table-->
+  <table class="table" *ngIf="showFormListTable">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Form Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Description Local</th>
+      <th scope="col">Published</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let form of listOfForms; let i = index ">
+      <td>{{i + 1}}</td>
+      <td>{{form.formName}}</td>
+      <td>{{form.descriptionEnglish}}</td>
+      <td>{{form.descriptionLocal}}</td>
+      <td>{{form.isPublished}}</td>
+      <td><button type="button" class="btn btn-outline-primary btn-sm" (click)="onSurveyPreviewClick(form)">Preview</button></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!--Survey Editor-->
+  <div *ngIf="showSurveyEditor">
+      <survey-editor [json]="json" (surveySaved)="onSurveySaved($event)"></survey-editor>
+  </div>
+
+</div>

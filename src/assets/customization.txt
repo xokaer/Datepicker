@@ -1,0 +1,12 @@
+Survey Widget
+node_modules/surveyjs-widgets/surveyjs-widgets.js line 577 or method afterRender
+  changed datepicker implementation for ethiopian date (use file "src/assets/libs/surveyjs-widgets-custom.js")
+
+Survey Editor
+node_modules/surveyjs-editor/surveyeditor.js line 6542
+    changed "Test Survey" to "Test Form"
+    changed "Survey Settings" to "Form Settings"
+    changed "Test Survey" to "Test Form"
+    changed "Save Survey" to "Save Form"
+    changed "Survey Designer" to "Form Designer"
+    changed "Edit survey settings" to "Edit form settings"
